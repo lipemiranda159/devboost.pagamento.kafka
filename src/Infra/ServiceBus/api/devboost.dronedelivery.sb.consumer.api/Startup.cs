@@ -1,5 +1,6 @@
 using devboost.dronedelivery.core.domain.Constants;
 using devboost.dronedelivery.sb.application;
+using devboost.dronedelivery.sb.consumer.api.Extensions;
 using devboost.dronedelivery.sb.consumer.api.Filter;
 using devboost.dronedelivery.sb.domain.Interfaces;
 using devboost.dronedelivery.sb.service;
@@ -27,12 +28,7 @@ namespace devboost.dronedelivery.sb.consumer.api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSingleton(Configuration);
-            services.AddSingleton<IConsumer, ConsumerService>();
-            services.AddSingleton<IProcessorQueue, ProcessorService>();
-            services.AddSingleton<ILoginProvider, LoginProvider>();
-            services.AddSingleton<IServiceFactory, ServiceFactory>();
-
+            services.AddSingletons(Configuration);
             services.AddHangfire(config => config.UseMemoryStorage());
 
         }
