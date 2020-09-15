@@ -13,7 +13,7 @@ namespace devboost.dronedelivery.core.services
 
         public HttpService()
         {
-
+            _client = new HttpClient();
         }
 
         public HttpService(bool useHandler = false)
