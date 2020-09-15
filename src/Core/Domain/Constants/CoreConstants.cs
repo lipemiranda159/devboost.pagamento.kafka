@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace devboost.dronedelivery.sb.domain.Constants
+namespace devboost.dronedelivery.core.domain.Constants
 {
-    public class ProjectConsts
+    public class CoreConstants
     {
         public const string PedidoTopic = "pedidos";
         public const string PagamentoTopic = "pagamentos";

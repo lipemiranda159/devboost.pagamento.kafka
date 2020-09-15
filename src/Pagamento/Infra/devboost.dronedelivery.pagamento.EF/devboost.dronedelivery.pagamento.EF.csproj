@@ -13,6 +13,7 @@
     <ProjectReference Include="..\..\..\Core\Domain\devboost.dronedelivery.core.domain.csproj" />
     <ProjectReference Include="..\..\..\Core\Services\devboost.dronedelivery.core.services\devboost.dronedelivery.core.services.csproj" />
     <ProjectReference Include="..\..\..\Delivery\Domain\devboost.dronedelivery.domain\devboost.dronedelivery.domain.csproj" />
+    <ProjectReference Include="..\..\..\Infra\ServiceBus\domain\devboost.dronedelivery.sb.domain\devboost.dronedelivery.sb.domain.csproj" />
   </ItemGroup>
 
 </Project>

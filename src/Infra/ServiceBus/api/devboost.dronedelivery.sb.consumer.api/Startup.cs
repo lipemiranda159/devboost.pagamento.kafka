@@ -1,5 +1,5 @@
+using devboost.dronedelivery.core.domain.Constants;
 using devboost.dronedelivery.sb.consumer.api.Filter;
-using devboost.dronedelivery.sb.domain.Constants;
 using devboost.dronedelivery.sb.domain.Interfaces;
 using devboost.dronedelivery.sb.service;
 using Hangfire;
@@ -59,8 +59,8 @@ namespace devboost.dronedelivery.sb.consumer.api
 
             var processorQueue = app.ApplicationServices.GetService<IProcessorQueue>();
             var recurringJobManager = app.ApplicationServices.GetService<IRecurringJobManager>();
-            recurringJobManager.AddOrUpdate(Guid.NewGuid().ToString(), () => processorQueue.ProcessorQueueAsync(ProjectConsts.PedidoTopic), "*/5 * * * * *");
-            recurringJobManager.AddOrUpdate(Guid.NewGuid().ToString(), () => processorQueue.ProcessorQueueAsync(ProjectConsts.PagamentoTopic), "*/5 * * * * *");
+            recurringJobManager.AddOrUpdate(Guid.NewGuid().ToString(), () => processorQueue.ProcessorQueueAsync(CoreConstants.PedidoTopic), "*/5 * * * * *");
+            recurringJobManager.AddOrUpdate(Guid.NewGuid().ToString(), () => processorQueue.ProcessorQueueAsync(CoreConstants.PagamentoTopic), "*/5 * * * * *");
 
         }
     }
