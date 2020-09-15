@@ -54,7 +54,7 @@
     <ProjectReference Include="..\..\..\Pagamento\Domain\devboost.dronedelivery.pagamento.domain\devboost.dronedelivery.pagamento.domain.csproj" />
     <ProjectReference Include="..\..\..\Pagamento\Infra\devboost.dronedelivery.pagamento.EF\devboost.dronedelivery.pagamento.EF.csproj" />
     <ProjectReference Include="..\..\..\Pagamento\Services\devboost.microservices.pagamento.services\devboost.dronedelivery.pagamento.services.csproj" />
-    <ProjectReference Include="..\..\Api\devboost.dronedelivery.Api.csproj" />
+    <ProjectReference Include="..\..\Api\devboost.dronedelivery.api.csproj" />
     <ProjectReference Include="..\..\Domain\devboost.dronedelivery.domain\devboost.dronedelivery.domain.csproj" />
   </ItemGroup>
 

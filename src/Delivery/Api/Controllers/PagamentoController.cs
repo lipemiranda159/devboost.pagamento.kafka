@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 
-namespace devboost.dronedelivery.Api.Controllers
+namespace devboost.dronedelivery.api.Controllers
 {
     /// <summary>
     /// Pagamento controller

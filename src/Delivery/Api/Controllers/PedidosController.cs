@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace devboost.dronedelivery.Api.Controllers
+namespace devboost.dronedelivery.api.Controllers
 {
     /// <summary>
     /// Controller com ações de pedidos

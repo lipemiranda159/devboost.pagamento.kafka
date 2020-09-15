@@ -219,5 +219,23 @@
             </summary>
             <param name="services"></param>
         </member>
+        <member name="T:devboost.dronedelivery.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:devboost.dronedelivery.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:devboost.dronedelivery.Program.BuildWebHost(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

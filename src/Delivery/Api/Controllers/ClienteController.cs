@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace devboost.dronedelivery.Api.Controllers
+namespace devboost.dronedelivery.api.Controllers
 {
     /// <summary>
     /// Controller com ações referentes aos clientes

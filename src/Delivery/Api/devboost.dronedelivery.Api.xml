@@ -1,27 +1,27 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>devboost.dronedelivery.Api</name>
+        <name>devboost.dronedelivery.api</name>
     </assembly>
     <members>
-        <member name="T:devboost.dronedelivery.Api.Controllers.ClienteController">
+        <member name="T:devboost.dronedelivery.api.Controllers.ClienteController">
             <summary>
             Controller com ações referentes aos clientes
             </summary>
         </member>
-        <member name="M:devboost.dronedelivery.Api.Controllers.ClienteController.#ctor(devboost.dronedelivery.domain.Interfaces.Repositories.IClienteRepository)">
+        <member name="M:devboost.dronedelivery.api.Controllers.ClienteController.#ctor(devboost.dronedelivery.domain.Interfaces.Repositories.IClienteRepository)">
             <summary>
             Constructor
             </summary>
             <param name="clienteRepository"></param>
         </member>
-        <member name="M:devboost.dronedelivery.Api.Controllers.ClienteController.Get">
+        <member name="M:devboost.dronedelivery.api.Controllers.ClienteController.Get">
             <summary>
             Retorna lista de clientes cadastrados no banco
             </summary>
             <returns>Uma lista de clientes</returns>
         </member>
-        <member name="M:devboost.dronedelivery.Api.Controllers.ClienteController.Post(devboost.dronedelivery.core.domain.Entities.Cliente)">
+        <member name="M:devboost.dronedelivery.api.Controllers.ClienteController.Post(devboost.dronedelivery.core.domain.Entities.Cliente)">
              <summary>
              Cria um novo cliente
              </summary>
@@ -41,24 +41,24 @@
              </remarks>        
              <returns>O novo cliente</returns>
         </member>
-        <member name="T:devboost.dronedelivery.Api.Controllers.DronesController">
+        <member name="T:devboost.dronedelivery.api.Controllers.DronesController">
             <summary>
             Controller com ações referentes aos drones
             </summary>
         </member>
-        <member name="M:devboost.dronedelivery.Api.Controllers.DronesController.#ctor(devboost.dronedelivery.domain.Interfaces.IDroneFacade)">
+        <member name="M:devboost.dronedelivery.api.Controllers.DronesController.#ctor(devboost.dronedelivery.domain.Interfaces.IDroneFacade)">
             <summary>
             Constructor
             </summary>
             <param name="droneFacade"></param>
         </member>
-        <member name="M:devboost.dronedelivery.Api.Controllers.DronesController.GetStatusDrone">
+        <member name="M:devboost.dronedelivery.api.Controllers.DronesController.GetStatusDrone">
             <summary>
             Retorna status dos drones
             </summary>
             <returns></returns>
         </member>
-        <member name="M:devboost.dronedelivery.Api.Controllers.DronesController.PostDrone(devboost.dronedelivery.core.domain.Entities.Drone)">
+        <member name="M:devboost.dronedelivery.api.Controllers.DronesController.PostDrone(devboost.dronedelivery.core.domain.Entities.Drone)">
              <summary>
              Adiciona um novo drone
              </summary>
@@ -76,18 +76,18 @@
              </remarks>
              <returns>O novo drone</returns>
         </member>
-        <member name="T:devboost.dronedelivery.Api.Controllers.LoginController">
+        <member name="T:devboost.dronedelivery.api.Controllers.LoginController">
             <summary>
             Controller com operações referentes aos drones
             </summary>
         </member>
-        <member name="M:devboost.dronedelivery.Api.Controllers.LoginController.#ctor(devboost.dronedelivery.security.service.AccessManager)">
+        <member name="M:devboost.dronedelivery.api.Controllers.LoginController.#ctor(devboost.dronedelivery.security.service.AccessManager)">
             <summary>
             Constructor
             </summary>
             <param name="accessManager"></param>
         </member>
-        <member name="M:devboost.dronedelivery.Api.Controllers.LoginController.Post(devboost.dronedelivery.security.domain.Entites.LoginDTO)">
+        <member name="M:devboost.dronedelivery.api.Controllers.LoginController.Post(devboost.dronedelivery.security.domain.Entites.LoginDTO)">
              <summary>
              Login do usuário
              </summary>
@@ -102,18 +102,18 @@
                  }
              </remarks>
         </member>
-        <member name="T:devboost.dronedelivery.Api.Controllers.PagamentoController">
+        <member name="T:devboost.dronedelivery.api.Controllers.PagamentoController">
             <summary>
             Pagamento controller
             </summary>
         </member>
-        <member name="M:devboost.dronedelivery.Api.Controllers.PagamentoController.#ctor(devboost.dronedelivery.domain.Interfaces.IPagamentoFacade)">
+        <member name="M:devboost.dronedelivery.api.Controllers.PagamentoController.#ctor(devboost.dronedelivery.domain.Interfaces.IPagamentoFacade)">
             <summary>
             Constructor
             </summary>
             <param name="pagamentoFacade"></param>
         </member>
-        <member name="M:devboost.dronedelivery.Api.Controllers.PagamentoController.AtualizaLista(System.Collections.Generic.List{devboost.dronedelivery.core.domain.PagamentoStatusDto})">
+        <member name="M:devboost.dronedelivery.api.Controllers.PagamentoController.AtualizaLista(System.Collections.Generic.List{devboost.dronedelivery.core.domain.PagamentoStatusDto})">
             <summary>
             Controller para recebimento de status de pagamento
             </summary>
@@ -130,28 +130,56 @@
             ]
             </remarks>
         </member>
-        <member name="T:devboost.dronedelivery.Api.Controllers.PedidosController">
+        <member name="T:devboost.dronedelivery.api.Controllers.PedidosController">
             <summary>
             Controller com ações de pedidos
             </summary>
         </member>
-        <member name="M:devboost.dronedelivery.Api.Controllers.PedidosController.#ctor(devboost.dronedelivery.domain.Interfaces.IPedidoFacade)">
+        <member name="M:devboost.dronedelivery.api.Controllers.PedidosController.#ctor(devboost.dronedelivery.domain.Interfaces.IPedidoFacade)">
             <summary>
             Construtor
             </summary>
             <param name="pedidoFacade"></param>
         </member>
-        <member name="M:devboost.dronedelivery.Api.Controllers.PedidosController.AssignDrone">
+        <member name="M:devboost.dronedelivery.api.Controllers.PedidosController.AssignDrone">
             <summary>
             Direciona pedidos para drones
             </summary>
             <returns></returns>
         </member>
-        <member name="M:devboost.dronedelivery.Api.Controllers.PedidosController.PostPedido(devboost.dronedelivery.core.domain.Entities.Pedido)">
+        <member name="M:devboost.dronedelivery.api.Controllers.PedidosController.PostPedido(devboost.dronedelivery.core.domain.Entities.Pedido)">
             <summary>
             Cria um novo pedido
             </summary>
             <param name="pedido"></param>
+            <remarks>
+            Exemplo:
+            
+                POST /api/pedido
+                {
+                    "clienteId": 1,
+                    "peso": 10,
+                    "situacao": 0,
+                    "pagamento": {
+                    "dadosPagamentos":
+                    [
+                        {
+                            "Id":0,
+                            "Dados":"num_cartao:0000000000000000,validade:08/28,Codigo:123,Nome:Joao"
+                        }
+                    ],
+                    "tipoPagamento": 0,
+                    "statusPagamento": 0,
+                    "descricao": "teste"
+                    }
+                }
+               
+            </remarks>
+        </member>
+        <member name="M:devboost.dronedelivery.api.Controllers.PedidosController.GetAll">
+            <summary>
+            
+            </summary>
             <returns></returns>
         </member>
         <member name="T:devboost.dronedelivery.Extensions.ServiceCollectionExtensions">

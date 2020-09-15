@@ -2,15 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>..\Delivery\Api\devboost.dronedelivery.Api.xml</DocumentationFile>
-    <WarningsAsErrors>NU1605;CS1591</WarningsAsErrors>
+    <DocumentationFile>obj\Debug\netcoreapp3.1\devboost.dronedelivery.api.xml</DocumentationFile>
   </PropertyGroup>
-
+  
   <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
@@ -38,6 +40,12 @@
     <ProjectReference Include="..\..\Infra\Security\Services\devboost.dronedelivery.security.service.csproj" />
     <ProjectReference Include="..\Domain\devboost.dronedelivery.domain\devboost.dronedelivery.domain.csproj" />
     <ProjectReference Include="..\Services\devboost.dronedelivery.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="devboost.dronedelivery.api.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 

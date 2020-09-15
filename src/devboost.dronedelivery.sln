@@ -30,7 +30,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{728816
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{874F27ED-5B29-4766-B2FE-B05ECEFF7A29}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "devboost.dronedelivery.Api", "Delivery\Api\devboost.dronedelivery.Api.csproj", "{AE9BFC52-86E7-4190-800F-6487DFFD705C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "devboost.dronedelivery.api", "Delivery\Api\devboost.dronedelivery.api.csproj", "{AE9BFC52-86E7-4190-800F-6487DFFD705C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{AE40BF5F-FD75-47B2-B27D-8AEB26C95778}"
 EndProject
@@ -86,7 +86,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "devboost.dronedelivery.sb.s
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{51176136-E2EA-48AA-B920-D58C66456674}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "devboost.dronedelivery.sb.application", "Infra\ServiceBus\application\devboost.dronedelivery.sb.application\devboost.dronedelivery.sb.application.csproj", "{AF7CF887-562B-4730-AA64-655EE162727B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "devboost.dronedelivery.sb.application", "Infra\ServiceBus\application\devboost.dronedelivery.sb.application\devboost.dronedelivery.sb.application.csproj", "{AF7CF887-562B-4730-AA64-655EE162727B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Compose", "Compose", "{54ADE0CD-8288-4349-B89F-4DA971576F2C}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace devboost.dronedelivery.Api.Controllers
+namespace devboost.dronedelivery.api.Controllers
 {
 
     /// <summary>
