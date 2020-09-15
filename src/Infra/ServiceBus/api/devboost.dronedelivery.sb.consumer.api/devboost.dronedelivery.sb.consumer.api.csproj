@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\application\devboost.dronedelivery.sb.application\devboost.dronedelivery.sb.application.csproj" />
     <ProjectReference Include="..\..\domain\devboost.dronedelivery.sb.domain\devboost.dronedelivery.sb.domain.csproj" />
     <ProjectReference Include="..\..\domain\devboost.dronedelivery.sb.service\devboost.dronedelivery.sb.service.csproj" />
   </ItemGroup>
