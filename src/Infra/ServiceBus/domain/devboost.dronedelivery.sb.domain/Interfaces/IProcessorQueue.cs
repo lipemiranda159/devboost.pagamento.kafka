@@ -4,6 +4,6 @@ namespace devboost.dronedelivery.sb.domain.Interfaces
 {
     public interface IProcessorQueue
     {
-        Task ProcessorQueueAsync();
+        Task ProcessorQueueAsync(string topicName);
     }
 }

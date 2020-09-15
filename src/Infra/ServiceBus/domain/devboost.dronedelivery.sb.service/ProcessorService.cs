@@ -1,4 +1,6 @@
-﻿using devboost.dronedelivery.sb.domain.Interfaces;
+﻿using devboost.dronedelivery.sb.domain.Enums;
+using devboost.dronedelivery.sb.domain.Extensions;
+using devboost.dronedelivery.sb.domain.Interfaces;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -9,22 +11,23 @@ namespace devboost.dronedelivery.sb.service
     {
         private readonly IConsumer _consumer;
         private readonly ILoginProvider _loginProvider;
-        private readonly IPedidosService _pedidoService;
-        public ProcessorService(IConsumer consumer, ILoginProvider loginProvider, IPedidosService pedidosService)
+        private readonly IServiceFactory _serviceFactory;
+        public ProcessorService(IConsumer consumer, ILoginProvider loginProvider, IServiceFactory serviceFactory)
         {
             _consumer = consumer;
             _loginProvider = loginProvider;
-            _pedidoService = pedidosService;
+            _serviceFactory = serviceFactory;
 
         }
-        public async Task ProcessorQueueAsync()
+        public async Task ProcessorQueueAsync(string topicName)
         {
             using var cancellationToken = new CancellationTokenSource(TimeSpan.FromSeconds(5));
-            var messages = await _consumer.ExecuteAsync(cancellationToken.Token, "pedido");
+            var messages = await _consumer.ExecuteAsync(cancellationToken.Token, topicName);
+            var processor = _serviceFactory.GetProcessor(TopicTypeExtensions.GetTopicType(topicName));
             var token = await _loginProvider.GetTokenAsync();
             foreach (var message in messages)
             {
-                await _pedidoService.ProcessPedidoAsync(token, message);
+                await processor.ProcessTopicAsync(token, message);
             }
         }
     }
