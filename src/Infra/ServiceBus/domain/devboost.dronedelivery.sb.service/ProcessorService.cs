@@ -1,6 +1,7 @@
 ﻿using devboost.dronedelivery.sb.domain.Enums;
 using devboost.dronedelivery.sb.domain.Extensions;
 using devboost.dronedelivery.sb.domain.Interfaces;
+using Hangfire;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -19,6 +20,8 @@ namespace devboost.dronedelivery.sb.service
             _serviceFactory = serviceFactory;
 
         }
+
+        [JobDisplayName("TopicName: {0}")]
         public async Task ProcessorQueueAsync(string topicName)
         {
             using var cancellationToken = new CancellationTokenSource(TimeSpan.FromSeconds(5));
