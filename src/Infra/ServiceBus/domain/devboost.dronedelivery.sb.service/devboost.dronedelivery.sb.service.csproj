@@ -8,12 +8,13 @@
   <ItemGroup>
     <PackageReference Include="Confluent.Kafka" Version="1.5.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.8" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Core\Services\devboost.dronedelivery.core.services\devboost.dronedelivery.core.services.csproj" />
-    <ProjectReference Include="..\Infra\Security\Domain\devboost.dronedelivery.security.domain\devboost.dronedelivery.security.domain.csproj" />
-    <ProjectReference Include="..\Infra\ServiceBus\domain\devboost.dronedelivery.sb.domain\devboost.dronedelivery.sb.domain.csproj" />
+    <ProjectReference Include="..\..\..\..\Core\Services\devboost.dronedelivery.core.services\devboost.dronedelivery.core.services.csproj" />
+    <ProjectReference Include="..\..\..\Security\Domain\devboost.dronedelivery.security.domain\devboost.dronedelivery.security.domain.csproj" />
+    <ProjectReference Include="..\devboost.dronedelivery.sb.domain\devboost.dronedelivery.sb.domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace devboost.dronedelivery.test
 {
-    public class MockPedidoRepository : RepositoryBase<core.domain.Entities.Pedido>, IPedidoRepository
+    public class MockPedidoRepository : RepositoryBase<Pedido>, IPedidoRepository
     {
         private readonly List<core.domain.Entities.Pedido> _pedidos;
 
@@ -44,6 +44,11 @@ namespace devboost.dronedelivery.test
             };
             _pedidos.Add(pedido);
             return _pedidos;
+        }
+
+        public Task<IEnumerable<Pedido>> ObterTodosPedidos()
+        {
+            throw new NotImplementedException();
         }
 
         public Task<core.domain.Entities.Pedido> PegaPedidoPendenteAsync(string GatewayId)
