@@ -1,7 +1,5 @@
 ﻿using devboost.dronedelivery.domain.Enums;
 using devboost.dronedelivery.felipe.EF.Repositories;
-using devboost.dronedelivery.Infra.Data;
-using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using Xunit;
 

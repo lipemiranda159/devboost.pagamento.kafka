@@ -21,7 +21,8 @@ namespace devboost.dronedelivery.core.services
             if (!useHandler)
             {
                 _client = new HttpClient();
-            } else
+            }
+            else
             {
                 var httpClientHandler = new HttpClientHandler()
                 {

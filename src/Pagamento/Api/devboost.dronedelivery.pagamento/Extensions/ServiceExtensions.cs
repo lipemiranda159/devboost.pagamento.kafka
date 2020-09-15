@@ -1,5 +1,4 @@
 ﻿using devboost.dronedelivery.core.domain;
-using devboost.dronedelivery.core.domain.Interfaces;
 using devboost.dronedelivery.core.services;
 using devboost.dronedelivery.pagamento.domain.Interfaces;
 using devboost.dronedelivery.pagamento.EF;

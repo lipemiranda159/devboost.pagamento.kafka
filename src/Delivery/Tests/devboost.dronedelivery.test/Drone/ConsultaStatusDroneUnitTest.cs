@@ -1,12 +1,12 @@
 ﻿using devboost.dronedelivery.core.domain.Entities;
+using devboost.dronedelivery.core.domain.Extensions;
 using devboost.dronedelivery.domain.Entities;
 using devboost.dronedelivery.domain.Interfaces.Repositories;
 using devboost.dronedelivery.Infra.Data;
 using devboost.dronedelivery.Services;
 using NSubstitute;
-using Xunit;
-using devboost.dronedelivery.core.domain.Extensions;
 using System;
+using Xunit;
 
 namespace devboost.dronedelivery.test
 {
@@ -88,7 +88,7 @@ namespace devboost.dronedelivery.test
             };
 
             var result = drone.ToTempoGasto(120);
-            
+
             Assert.Equal(DateTime.Now.AddHours(3).Hour, result.Hour);
 
         }

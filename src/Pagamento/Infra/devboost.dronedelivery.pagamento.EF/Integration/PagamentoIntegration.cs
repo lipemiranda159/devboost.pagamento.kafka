@@ -1,12 +1,9 @@
 ﻿using devboost.dronedelivery.core.domain;
 using devboost.dronedelivery.core.services;
 using devboost.dronedelivery.domain.Constants;
-using devboost.dronedelivery.domain.Interfaces;
 using devboost.dronedelivery.pagamento.EF.Integration.Interfaces;
 using devboost.dronedelivery.Services;
 using System.Collections.Generic;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace devboost.dronedelivery.pagamento.EF.Integration

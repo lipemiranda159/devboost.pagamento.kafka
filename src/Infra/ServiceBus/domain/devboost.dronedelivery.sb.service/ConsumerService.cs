@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace devboost.dronedelivery.sb.service
 {
-    public class ConsumerService: ServiceBase, IConsumer
+    public class ConsumerService : ServiceBase, IConsumer
     {
         private const string StartProcess = "IniciaProcesso";
 
@@ -36,7 +36,7 @@ namespace devboost.dronedelivery.sb.service
                 {
                     var message = StartProcess;
                     while (!string.IsNullOrEmpty(message))
-                    {                        
+                    {
                         var cr = consumer.Consume(stopingToken);
                         message = cr.Message.Value;
                         result.Add(message);

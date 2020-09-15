@@ -1,9 +1,5 @@
-﻿using devboost.dronedelivery.core.domain.Interfaces;
-using devboost.dronedelivery.core.services;
-using System;
-using System.Collections.Generic;
+﻿using devboost.dronedelivery.core.services;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace devboost.dronedelivery.test

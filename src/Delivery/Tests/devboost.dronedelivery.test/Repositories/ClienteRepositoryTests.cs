@@ -1,11 +1,7 @@
 ﻿using Castle.DynamicProxy.Internal;
 using devboost.dronedelivery.core.domain.Entities;
 using devboost.dronedelivery.felipe.EF.Repositories;
-using devboost.dronedelivery.Infra.Data;
-using NSubstitute;
 using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -55,7 +51,7 @@ namespace devboost.dronedelivery.test.Repositories
 
             Assert.IsType(TypeUtil.GetTypeOrNull(new List<Cliente>()), clientes);
             Assert.True(clientes != null);
-            
+
         }
 
     }

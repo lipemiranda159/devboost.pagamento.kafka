@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using devboost.dronedelivery.core.domain;
+﻿using devboost.dronedelivery.core.domain;
 using devboost.dronedelivery.core.domain.Entities;
 using devboost.dronedelivery.core.domain.Enums;
-using devboost.dronedelivery.pagamento.Api.Controllers;
 using devboost.dronedelivery.pagamento.domain.Interfaces;
 using NSubstitute;
+using System;
+using System.Collections.Generic;
 
 namespace devboost.Dronedelivery.Pagamento.Test.Pagamentos
 {

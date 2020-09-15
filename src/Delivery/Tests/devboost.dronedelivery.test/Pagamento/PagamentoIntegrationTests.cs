@@ -2,9 +2,7 @@
 using devboost.dronedelivery.core.domain.Enums;
 using devboost.dronedelivery.core.services;
 using devboost.dronedelivery.pagamento.EF.Integration;
-using NSubstitute;
 using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -38,7 +36,7 @@ namespace devboost.dronedelivery.test
             };
 
             Assert.True(await pagamentoIntegration.ReportarResultadoAnalise(listPagamento));
-            
+
         }
     }
 }
