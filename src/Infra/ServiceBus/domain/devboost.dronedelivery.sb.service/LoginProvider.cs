@@ -27,8 +27,10 @@ namespace devboost.dronedelivery.sb.service
 
             var request = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
 
-            using var client = new HttpClient();
-            client.BaseAddress = new Uri(_urlPedidos);
+            using var client = new HttpClient
+            {
+                BaseAddress = new Uri(_urlPedidos)
+            };
             var tokenJson = await client.PostAsync("api/login", request);
             var token = JSONHelper.DeserializeJsonToObject<Token>(await tokenJson.Content.ReadAsStringAsync()) as Token;
             return token.AccessToken;
