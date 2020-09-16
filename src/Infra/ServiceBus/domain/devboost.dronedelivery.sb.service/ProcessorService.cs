@@ -30,11 +30,14 @@ namespace devboost.dronedelivery.sb.service
             {
                 using var cancellationToken = new CancellationTokenSource(TimeSpan.FromSeconds(5));
                 var messages = await _consumer.ExecuteAsync(cancellationToken.Token, topicName);
-                var processor = _serviceFactory.GetProcessor(TopicTypeExtensions.GetTopicType(topicName));
-                var token = await _loginProvider.GetTokenAsync();
-                foreach (var message in messages)
+                if (messages.Count > 0)
                 {
-                    await processor.ProcessTopicAsync(token, message);
+                    var processor = _serviceFactory.GetProcessor(TopicTypeExtensions.GetTopicType(topicName));
+                    var token = await _loginProvider.GetTokenAsync();
+                    foreach (var message in messages)
+                    {
+                        await processor.ProcessTopicAsync(token, message);
+                    }
                 }
                 result.Messages = messages;
                 result.Status = "Ok";
@@ -44,7 +47,7 @@ namespace devboost.dronedelivery.sb.service
             {
 
                 result.Status = $"Error: {ex.StackTrace.ToString()}";
-            }            
+            }
             return result;
         }
     }
