@@ -1,4 +1,5 @@
-﻿using devboost.dronedelivery.sb.domain.Enums;
+﻿using devboost.dronedelivery.sb.domain.DTO;
+using devboost.dronedelivery.sb.domain.Enums;
 using devboost.dronedelivery.sb.domain.Extensions;
 using devboost.dronedelivery.sb.domain.Interfaces;
 using Hangfire;
@@ -22,16 +23,29 @@ namespace devboost.dronedelivery.sb.service
         }
 
         [JobDisplayName("TopicName: {0}")]
-        public async Task ProcessorQueueAsync(string topicName)
+        public async Task<HangfireResult> ProcessorQueueAsync(string topicName)
         {
-            using var cancellationToken = new CancellationTokenSource(TimeSpan.FromSeconds(5));
-            var messages = await _consumer.ExecuteAsync(cancellationToken.Token, topicName);
-            var processor = _serviceFactory.GetProcessor(TopicTypeExtensions.GetTopicType(topicName));
-            var token = await _loginProvider.GetTokenAsync();
-            foreach (var message in messages)
+            var result = new HangfireResult();
+            try
             {
-                await processor.ProcessTopicAsync(token, message);
+                using var cancellationToken = new CancellationTokenSource(TimeSpan.FromSeconds(5));
+                var messages = await _consumer.ExecuteAsync(cancellationToken.Token, topicName);
+                var processor = _serviceFactory.GetProcessor(TopicTypeExtensions.GetTopicType(topicName));
+                var token = await _loginProvider.GetTokenAsync();
+                foreach (var message in messages)
+                {
+                    await processor.ProcessTopicAsync(token, message);
+                }
+                result.Messages = messages;
+                result.Status = "Ok";
+
             }
+            catch (Exception ex)
+            {
+
+                result.Status = $"Error: {ex.StackTrace.ToString()}";
+            }            
+            return result;
         }
     }
 }
