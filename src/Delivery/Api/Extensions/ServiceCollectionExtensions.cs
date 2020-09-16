@@ -164,8 +164,7 @@ namespace devboost.dronedelivery.Extensions
                       new string[] { }
                     }
                 });
-                var xmlFile = Assembly.GetExecutingAssembly().GetName().Name +
-                    ProjectConsts.XML_EXTENSION;
+                var xmlFile = $"{Assembly.GetEntryAssembly().GetName().Name}{ProjectConsts.XML_EXTENSION}";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
             });

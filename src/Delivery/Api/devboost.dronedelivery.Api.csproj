@@ -2,18 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-  </PropertyGroup>
-
-  <PropertyGroup>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <ProjectGuid>{AE9BFC52-86E7-4190-800F-6487DFFD705C}</ProjectGuid>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>obj\Debug\netcoreapp3.1\devboost.dronedelivery.api.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\netcoreapp3.1\devboost.dronedelivery.api.xml</DocumentationFile>
   </PropertyGroup>
-  
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>D:\Pessoais\devboost.pagamento.kafka\src\Delivery\Api\devboost.dronedelivery.api.xml</DocumentationFile>
+  </PropertyGroup>
   <ItemGroup>
+
     <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 
