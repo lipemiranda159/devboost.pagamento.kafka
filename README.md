@@ -16,12 +16,8 @@ Grupo 4 - Projeto Itaú (Kafka)
 - BDD
 - TDD
 
-## Grupo 4 - Desenvolvedores
-
-- Italo Vinicios
-- Felipe Miranda
-- Lucas Scheid 
-- Marcos Alves 
+## Rodar o projeto
+- Execute o comando: docker-compose up --build
 
 ## Instruções para rodar a cobertura de código
  
